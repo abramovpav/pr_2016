@@ -1,0 +1,15 @@
+{
+  "name": "test-spa",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "crossroads": "~0.12.0",
+    "hasher": "~1.2.0",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.11",
+    "requirejs-text": "~2.0.10",
+    "knockout": "^3.4.0",
+    "knockout-projections": "^1.1.0",
+    "jquery.cookie": "^1.4.1"
+  }
+}

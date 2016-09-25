@@ -1,0 +1,11 @@
+<div class="callout large" data-bind="visible: user().role != 0">
+
+    <div class="row column text-center">
+        <h1>Check out <a href="#users">Users</a> page!</h1>
+    </div>
+</div>
+<div class="callout alert" data-bind="visible: user().role == 0">
+    <h5>Authentication</h5>
+    <p>You are not logged in</p>
+</div>
+<blog-component data-bind="visible: user().role != 0"></blog-component>

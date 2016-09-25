@@ -1,0 +1,16 @@
+﻿<table class="responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: users">
+        <tr data-bind="click: $parent.showUser">
+            <td data-bind="text: id"></td>
+            <td data-bind="text: username"></td>
+            <td data-bind="text: email"></td>
+        </tr>
+    </tbody>
+</table>

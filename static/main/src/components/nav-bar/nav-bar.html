@@ -1,0 +1,45 @@
+<div class="top-bar">
+    <div class="top-bar-title">
+    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+      <button class="menu-icon dark" type="button" data-toggle></button>
+    </span>
+        <strong>SPA Knockout</strong>
+    </div>
+    <div id="responsive-menu">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li data-bind="css: { active: route().page === 'home-page' }">
+                    <a href="#">Home</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'users-page' }">
+                    <a href="#users">Users</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'about-page' }">
+                    <a href="#about">About</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'new-post-page' }">
+                    <a href="#new">New</a>
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li data-bind="visible: user().role > 1">
+                    <a href="/admin/">
+                        Admin Tools
+                    </a>
+                </li>
+                <li data-bind="visible: user().role > 0">
+                    <button class="button alert" data-bind="click: logout">
+                        Logout
+                    </button>
+                </li>
+                <li data-bind="visible: user().role == 0">
+                    <a href="/login">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{% extends 'auth/base.html' %}
+
+{%  block content %}
+
+<p class="text-center"><img src="//placehold.it/300x50" alt="Logo"></p>
+<form  class="callout" action="{% url 'auth:login' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+{#    <p><input type="text" name="username" placeholder="Username"></p>#}
+{#    <p><input type="password" name="password" placeholder="password"></p>#}
+    {% if error_message %}
+        <div class="callout alert">
+            <h5>Error</h5>
+            <p>{{ error_message }}</p>
+        </div>
+    {% endif %}
+
+
+    <button type="submit" class="expanded button radius">Login</button>
+</form>
+
+{% endblock %}

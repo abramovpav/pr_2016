@@ -1,0 +1,25 @@
+{% extends 'auth/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <script src="{% static 'main/src/bower_modules/knockout/dist/knockout.debug.js' %}"></script>
+    <script src="{% static 'main/src/bower_modules/jquery.cookie/jquery.cookie.js' %}"></script>
+{% endblock %}
+
+{%  block content %}
+
+<p class="text-center"><img src="//placehold.it/300x50" alt="Logo"></p>
+<form  class="callout">
+    <p><input type="text" name="username" placeholder="Username" data-bind="value: credentials().username"></p>
+    <p><input type="password" name="password" placeholder="password" data-bind="value: credentials().password"></p>
+
+    <p data-bind="visible: loginError">Unable to login with provided credentials</p>
+
+    <button type="submit" class="expanded button radius" data-bind="click: onLogin">Login</button>
+</form>
+
+{% endblock %}
+
+{% block footer_scripts %}
+    <script src="{% static 'main/src/login/login.js' %}"></script>
+{% endblock %}

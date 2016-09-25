@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://127.0.0.1/"/>
+    <script type='text/javascript' src='{% static 'main/js/knockoutjs/knockout-3.4.0.js' %}'></script>
+    <script type='text/javascript' src='{% static 'main/js/foundation/vendor/jquery.js' %}'></script>
+    <script type='text/javascript' src='{% static 'node_modules/pagerjs/pager.js' %}'></script>
+
+    <script type='text/javascript' src='{% static 'main/js/foundation/vendor/what-input.js' %}'></script>
+    <script type='text/javascript' src='{% static 'main/js/foundation/vendor/foundation.min.js' %}'></script>
+{#    <link rel="stylesheet" href="{% static 'main/css/foundation/custom/css/foundation.min.css' %}">#}
+    <link rel="stylesheet" href="{% static 'main/css/foundation/foundation.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/app/styles.css' %}">
+</head>
+<body>
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Users</a></li>
+        </ul>
+    </div>
+{#    <div class="top-bar-right">#}
+{#        <ul class="menu">#}
+{#            <li><input type="search" placeholder="Search"></li>#}
+{#            <li>#}
+{#                <button type="button" class="button">Search</button>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+</div>
+
+{#<div class="row column" data-bind="foreach: users">#}
+{#        <p>ID: <strong data-bind="text: id">todo</strong></p>#}
+{#        <p>First name: <strong data-bind="text: name">todo</strong></p>#}
+{#</div>#}
+<h2>HEllo, world</h2>
+
+<div data-bind="page: {id: 'start'}">
+    <!-- the previous page -->
+</div>
+<div data-bind="page: {id: 'structure'}">
+    <!-- this page -->
+</div>
+
+<script type='text/javascript' src='{% static 'main/js/app/app.js' %}'></script>
+</body>
+</html>

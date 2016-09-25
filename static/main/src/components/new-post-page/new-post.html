@@ -1,0 +1,19 @@
+<div class="divider"></div>
+<div>
+    <form>
+        <div class="row">
+            <div class="small-12 columns callout">
+                <h2>New Post:</h2>
+                <label>
+                    Title
+                    <input type="text" data-bind="value: post().title" placeholder="Title"/>
+                </label>
+                <label>
+                    Text (<span data-bind="text: post().symbols"></span>)
+                    <textarea rows="10" data-bind="value: post().text" placeholder="Text"></textarea>
+                </label>
+                <button class="button expanded radius" data-bind="click: onSave, enable: checkForm()">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
