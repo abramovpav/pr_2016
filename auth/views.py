@@ -1,16 +1,13 @@
 from django.contrib.auth import authenticate, login as system_login, logout as system_logout
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
-from rest_framework.authentication import BasicAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from auth.forms import LoginForm
-from pr_2016.base import CsrfExemptSessionAuthentication
 
 
 class LoginPageView(TemplateView):
@@ -43,7 +40,6 @@ def login(request):
 
 
 class LogoutView(APIView):
-    # authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
 
     def post(self, request):
         if request.user.is_authenticated:

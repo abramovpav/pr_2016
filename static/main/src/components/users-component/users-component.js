@@ -5,8 +5,8 @@
         this.users = ko.observableArray();
 
         var getUsers = function () {
-            dataProvider.get('/api_v0/users/', function(response) {
-               self.users(response)
+            dataProvider.get('/api_v0/users/', function (response) {
+                self.users(response)
             });
             //$.getJSON('/api_v0/users/', this.users);
         };
@@ -19,9 +19,9 @@
             location.hash = 'user/' + this.id;
         };
 
-        //$(document).foundation();
+        $(document).foundation();
     }
 
-    return { viewModel: UsersComponentViewModel, template: templateMarkup };
+    return {viewModel: UsersComponentViewModel, template: templateMarkup};
 
 });

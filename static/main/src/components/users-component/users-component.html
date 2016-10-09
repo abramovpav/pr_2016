@@ -1,16 +1,36 @@
-﻿<table class="responsive">
+﻿<div id="users" data-bind="foreach: users">
+    <div class="media-object stack-for-small">
+        <div class="media-object-section middle">
+            <div class="thumbnail">
+                <img src="//placehold.it/150x150">
+            </div>
+        </div>
+        <div class="media-object-section" style="width: 100%;">
+            <h4 data-bind="text: username">Dreams feel real while we're in them.</h4>
+
+            <p>Email: <span data-bind="text: email"></span></p>
+
+        </div>
+        <div class="media-object-section bottom">
+            <p><button class="button float-right" data-bind="click: $parent.showUser">Details</button></p>
+        </div>
+    </div>
+</div>
+<!--
+<table class="responsive">
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Email</th>
-        </tr>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+    </tr>
     </thead>
     <tbody data-bind="foreach: users">
-        <tr data-bind="click: $parent.showUser">
-            <td data-bind="text: id"></td>
-            <td data-bind="text: username"></td>
-            <td data-bind="text: email"></td>
-        </tr>
+    <tr data-bind="click: $parent.showUser">
+        <td data-bind="text: id"></td>
+        <td data-bind="text: username"></td>
+        <td data-bind="text: email"></td>
+    </tr>
     </tbody>
 </table>
+-->

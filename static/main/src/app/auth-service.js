@@ -2,7 +2,7 @@
     function AuthService() {
         var self = this;
         this.user = ko.observable({role: userRoles.roles.public});
-        storage.jwtToken = JSON.parse($.cookie('jwt-token'));
+        storage.jwtToken = JSON.parse($.cookie('jwt-token') || null);
         console.log('token', storage.jwtToken);
 
         function loadCurrentUser() {
@@ -20,7 +20,7 @@
                     Authorization: 'JWT ' + storage.jwtToken
                 },
                 dataType: "json",
-                success: function(result) {
+                success: function (result) {
                     if (!result) {
                         self.user({role: userRoles.roles.public});
                     }
@@ -30,7 +30,7 @@
                     }
                     console.log('user', self.user());
                 },
-                error: function(result) {
+                error: function (result) {
                     // no user
                     self.user({role: userRoles.roles.public});
                 }
@@ -45,16 +45,6 @@
             $.cookie('jwt-token', ko.toJSON(null));
             loadCurrentUser();
         };
-        //this.logout = function() {
-        //    console.log('logout');
-        //    $.ajax({
-        //        url: "/api_v0/auth/logout",
-        //        async: false,
-        //        method: 'POST',
-        //        dataType: "json"
-        //    });
-        //    loadCurrentUser();
-        //}
     }
 
     return new AuthService();

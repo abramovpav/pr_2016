@@ -1,6 +1,13 @@
-﻿<div class="row column" data-bind="foreach: articles">
+﻿<div class="row column">
+    <a class="button float-right" href="#new">Add Post</a>
+    <!--<div id="newPost" class="row column" data-toggler data-animate="hinge-in-from-top hinge-out-from-top" style="display: none;">
+        <new-post-component></new-post-component>
+    </div>-->
+</div>
+<div class="row column" data-bind="foreach: articles">
     <div class="callout">
         <h3 data-bind="text: title">No title</h3>
+
         <p data-bind="text: text">No Text</p>
     </div>
 </div>

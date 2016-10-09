@@ -2,7 +2,7 @@
     function DataProviderService() {
         var self = this;
 
-        this.call = function (url, method, successHandler, errorHandler, async, cache, auth) {
+        this.call = function (url, method, data, successHandler, errorHandler, async, cache, auth) {
             if (auth != false) {
                 auth = true;
             }
@@ -13,6 +13,8 @@
             $.ajax({
                 url: url,
                 method: method,
+                contentType: "application/json",
+                data: data,
                 async: async || true,
                 cache: cache || true,
                 headers: headers,
@@ -22,12 +24,12 @@
             });
         };
 
-        this.post = function (url, successHandler, errorHandler, async, cache, auth) {
-            self.call(url, 'post', successHandler, errorHandler, async, cache, auth)
+        this.post = function (url, data, successHandler, errorHandler, async, cache, auth) {
+            self.call(url, 'post', data, successHandler, errorHandler, async, cache, auth)
         };
 
         this.get = function (url, successHandler, errorHandler, async, cache, auth) {
-            self.call(url, 'get', successHandler, errorHandler, async, cache, auth)
+            self.call(url, 'get', null, successHandler, errorHandler, async, cache, auth)
         }
     }
 

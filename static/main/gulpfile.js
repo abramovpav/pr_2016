@@ -35,7 +35,8 @@ requireJsOptimizerConfig = merge(requireJsRuntimeConfig, {
         'components/users-component/users-component',
         'components/blog-component/blog-component',
         'components/users-page/users',
-        'components/new-post-page/new-post'
+        'components/new-post-page/new-post',
+        'components/new-post-component/new-post-component'
         //'libs/foundation-6.2.3/js/vendor/what-input.js',
         //'libs/foundation-6.2.3/js/vendor/foundation.js'
     ],

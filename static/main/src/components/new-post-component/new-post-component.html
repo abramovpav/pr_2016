@@ -1,0 +1,34 @@
+<form data-abide novalidate>
+    <div data-abide-error class="alert callout" style="display: none;">
+        <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    </div>
+    <div class="callout">
+        <div class="row">
+            <h2>New Post:</h2>
+
+            <div class="small-12 columns">
+                <label>Title (<span data-bind="text: post().titleCharsLeft"></span>)
+                    <small>required</small>
+                    <input type="text" data-bind="value: post().title" placeholder="Title" required/>
+                    <span class="form-error">
+                        Yo, you had better fill this out, it's required.
+                    </span>
+                </label>
+            </div>
+            <div class="small-12 columns">
+                <label>Text (<span data-bind="text: post().textCharsLeft"></span>)
+                    <small>required</small>
+                    <textarea rows="10" data-bind="value: post().text" placeholder="Text" required></textarea>
+                    <span class="form-error">
+                        Fill me, please
+                    </span>
+                </label>
+            </div>
+            <div class="small-12 columns">
+                <button class="button expanded radius" type="submit" data-bind="click: onSave, enable: checkForm()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

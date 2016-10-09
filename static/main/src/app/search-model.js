@@ -6,7 +6,7 @@
             return {
                 name: this.name()
             };
-        }, this).extend({ rateLimit: 500 });
+        }, this).extend({rateLimit: 500});
     }
 
     return new SearchModel();
